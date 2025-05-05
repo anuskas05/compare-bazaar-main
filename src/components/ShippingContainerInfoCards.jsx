@@ -48,7 +48,7 @@ const ShippingContainerInfoCards = () => {
               <h2 className="text-3xl font-semibold ml-4">Uses</h2>
             </div>
             <p className="text-gray-600 mb-6 text-base text-left">
-              Businesses of all types and sizes are using shipping containers to:
+              Businesses of all types and sizes are using shipping container to:
             </p>
             <ul className="space-y-3">
               {[
