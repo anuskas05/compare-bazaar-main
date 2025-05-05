@@ -33,7 +33,7 @@ const ShippingContainerInfoCards = () => {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row h-auto sm:h-[500px] lg:h-[400px]">
           <div className="w-full sm:w-1/3 bg-gray-200 flex items-center justify-center p-0">
             <img
-              src="https://media.istockphoto.com/id/1163860585/photo/text-messaging-on-the-plane.jpg?s=612x612&w=0&k=20&c=0DZrG0ezxGZ8kjw9qVKSchXFoM14n6NxUzDOJrfwDhs="
+              src="https://media.istockphoto.com/id/1465618017/photo/businessmen-investor-think-before-buying-stock-market-investment-using-smartphone-to-analyze.jpg?s=612x612&w=0&k=20&c=YNEkfoME1jbz6FUJImxCQtaGZZntrf7u-Byxmgk4pOY="
               alt="Uses"
               className="w-full h-auto rounded-lg lg:h-[400px] md:h-[500px]"
             />
