@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Phone Systems Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .widget-container {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 40px auto;
+            max-width: 800px;
+        }
+        .widget-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        #buyerzone-widget {
+            min-height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 18px;
+            color: #666;
+        }
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Add these styles to center the BuyerZone widget */
+        [data-bzwidget] {
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Business Phone Systems Comparison</h1>
+            <p>Compare top business phone system providers and get the best quotes</p>
+        </header>
+        
+        
+        <!-- BuyerZone Widget Code -->
+        <script data-bzwidget
+            src="https://cdn.buyerzone.com/apps/widget/bzWidget.min.js"
+            data-bzwidget-pub-id="59578"
+            data-bzwidget-color-palette-name="default"
+            data-bzwidget-category-id="10144">
+        </script>
+        <script>
+            // Check if widget loaded successfully
+            function checkWidgetLoaded() {
+                if (typeof bzWidget !== 'undefined') {
+                    bzWidget.init();
+                    document.getElementById('buyerzone-widget').innerHTML = '';
+                } else {
+                    setTimeout(checkWidgetLoaded, 500);
+                }
+            }
+            
+            // Start checking for widget
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(checkWidgetLoaded, 1000);
+                
+                // Fallback in case widget fails to load
+                setTimeout(function() {
+                    if (typeof bzWidget === 'undefined') {
+                        document.getElementById('buyerzone-widget').innerHTML = 
+                            '<p style="text-align:center; color:red;">Unable to load comparison tool. Please refresh the page or try again later.</p>';
+                    }
+                }, 10000);
+            });
+        </script>
+    </div>
+</body>
+</html>
