@@ -32,7 +32,21 @@ const Home = () => {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
+   const labels = ["payroll", "crm", "voip", "gps"];
+    const [highlightIndex, setHighlightIndex] = useState(0); 
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % labels.length);
+    }, 2000); // highlight every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const getHighlightClass = (labelName) =>
+    activeIndex === labels.indexOf(labelName)
+      ? "text-[#0032b5] font-extrabold"
+      : "text-black font-semibold";
   // HANDELING THE SUBSCRIBE BUTTON
   const handleSubscribe = async () => {
     if (!email.trim()) return alert("Please enter a valid email!");
@@ -440,45 +454,47 @@ const Home = () => {
           position: 'relative'
         }}
       >
-        {/* Magnifying Glass Image */}
-        <div className="relative w-96 md:w-[400px] lg:w-[500px] h-96 md:h-[500px] lg:h-[600px]">
-  {/* Magnifying Glass Image */}
-  <img 
-    src="images/MagnifiedGlass.png" 
-    alt="Magnifying glass" 
-    className="w-full h-full object-contain absolute z-10"
-  />
+         <div className="relative w-96 md:w-[400px] lg:w-[500px] h-96 md:h-[500px] lg:h-[600px]">
+      {/* Magnifying Glass Image */}
+      <img
+        src="images/MagnifiedGlass.png"
+        alt="Magnifying glass"
+        className="absolute z-10 w-full h-full object-contain pointer-events-none animate-float-up"
+      />
 
-  {/* Final Adjusted Labels - Shifted Further Left & Up */}
-  <div
-    className="absolute z-0 left-1/2 top-1/2 transform -translate-x-[68%] -translate-y-[72%] w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden"
-  >
-    <div className="absolute inset-0 pointer-events-none">
+      {/* Labels */}
+      <div className="absolute z-20 left-[37%] top-[37%] -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] flex items-center justify-center">
+        <div className="relative w-full h-full">
+          {/* Best Payroll */}
+          <div
+            className={`absolute left-1/2 top-[20%] -translate-x-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("payroll")}`}
+          >
+            Best Payroll
+          </div>
 
-      {/* Best Payroll */}
-      <div className="absolute left-[50%] top-[30%] -translate-x-1/2 text-blue-300 text-sm md:text-lg font-semibold">
-        Best Payroll
-      </div>
+          {/* Best CRM */}
+          <div
+            className={`absolute left-[15%] top-1/2 -translate-y-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("crm")}`}
+          >
+            Best CRM
+          </div>
 
-      {/* Best CRM */}
-      <div className="absolute left-[28%] top-[52%] text-blue-300 text-sm md:text-lg font-semibold">
-        Best CRM
-      </div>
+          {/* Best VOIP */}
+          <div
+            className={`absolute right-[15%] top-1/2 -translate-y-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("voip")}`}
+          >
+            Best VOIP
+          </div>
 
-      {/* Best VOIP */}
-      <div className="absolute left-[68%] top-[48%] text-blue-300 text-sm md:text-lg font-semibold">
-        Best VOIP
-      </div>
-
-      {/* Best GPS */}
-      <div className="absolute left-[56%] top-[75%] text-blue-300 text-sm md:text-lg font-semibold">
-        Best GPS
+          {/* Best GPS */}
+          <div
+            className={`absolute left-1/2 bottom-[20%] -translate-x-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("gps")}`}
+          >
+            Best GPS
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-
       </div>
       
       {/* Floating Labels - Responsive positioning and hidden on smallest screens */}

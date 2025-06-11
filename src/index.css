@@ -34,24 +34,18 @@ svg.responsive {
   height: auto;
 }
 
- @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
+ @keyframes floatUp {
+  0% {
+    transform: translateY(0);
   }
   50% {
     transform: translateY(-10px);
   }
+  100% {
+    transform: translateY(0);
+  }
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.delay-0 { animation-delay: 0s; }
-.delay-1000 { animation-delay: 1s; }
-.delay-2000 { animation-delay: 2s; }
-.delay-3000 { animation-delay: 3s; }
-
-.text-shadow-glow {
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 16px rgba(0, 123, 255, 0.4);
+.animate-float-up {
+  animation: floatUp 2s ease-in-out;
 }
