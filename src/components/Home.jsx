@@ -371,7 +371,7 @@ const Home = () => {
         {/* First Section*/}
         <div className="relative min-h-[520px] bg-gradient-to-r from-[#ff8633] to-amber-700 overflow-hidden border-0">
   {/* Main Content Grid - Changed to more flexible layout for better responsive behavior */}
-  <div className="flex flex-col lg:flex-row container mx-auto">
+ <div className="flex flex-col lg:flex-row container mx-auto"> 
     {/* Left Content - Text and form section */}
     <div className="relative z-10 flex flex-col justify-center py-10 px-4 sm:px-8 md:px-12 lg:w-1/2 lg:py-20 lg:px-16 ">
       {/* Main Heading - Responsive text sizes */}
@@ -425,139 +425,59 @@ const Home = () => {
       </div>
     </div>
 
-    {/* Microscope Visual - Now visible on all screen sizes */}
+    {/* Magnifying Glass Visual */}
     <div className="flex items-center justify-center relative py-6 md:py-10 lg:w-1/2">
       {/* Background decorative elements - Responsive sizes */}
       <div className="absolute top-0 right-0 w-32 md:w-64 h-32 md:h-64 bg-orange-300 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
       <div className="absolute bottom-10 md:bottom-20 right-10 md:right-20 w-32 md:w-56 h-32 md:h-56 bg-amber-500 rounded-full filter blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
       <div className="absolute top-20 md:top-40 left-10 md:left-20 w-24 md:w-40 h-24 md:h-40 bg-orange-600 rounded-full filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '3s' }}></div>
       
-      {/* Responsive Microscope Visual */}
+      {/* Magnifying Glass Container */}
       <div 
-        className="relative z-10 transform -rotate-12 scale-50 sm:scale-75 lg:scale-90 xl:scale-100" 
+        className="relative z-10" 
         style={{ 
           animation: 'slowFloat 6s ease-in-out infinite',
-          position: 'relative',
-          transform: 'rotate(-12deg)'
+          position: 'relative'
         }}
       >
-        {/* Main Lens/Circle */}
-        <div className="relative w-72 xl:w-80 h-72 xl:h-80 rounded-full border-8 border-gray-300 bg-white bg-opacity-95 shadow-2xl flex items-center justify-center overflow-hidden">
-          {/* Inner metal rim */}
-          <div className="absolute inset-2 rounded-full border-4 border-gray-200"></div>
-          
-          {/* Content inside the lens */}
-          <div className="absolute inset-8 flex flex-col">
-            {/* Mock Price Comparison */}
-            <div className="flex justify-between items-center mb-4">
-              <div className="text-sm font-bold text-gray-800 ml-18">Compare-Bazaar</div>
-              <div className="flex space-x-1">
-                <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                <div className="h-2 w-2 rounded-full bg-yellow-500"></div>
-                <div className="h-2 w-2 rounded-full bg-red-500"></div>
-              </div>
-            </div>
-            
-            {/* Price bars */}
-            <div className="mb-3">
-              <div className="flex justify-between items-center mb-1">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
-                  <div className="text-xs font-medium ">Best CRM Management Software</div>
-                </div>
-                {/* <div className="text-xs font-bold">$499</div> */}
-              </div>
-              <div className="h-3 w-full bg-gray-100 rounded-full overflow-hidden shadow-inner">
-                <div className="h-full rounded-full" style={{ width: '75%', backgroundColor: '#ff8633' }}></div>
-              </div>
-              <div className="flex justify-end">
-                <div className="text-xs text-gray-500 mt-1">Features: 8/10</div>
-              </div>
-            </div>
-            
-            <div className="mb-3">
-              <div className="flex justify-between items-center mb-1">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
-                  <div className="text-xs font-medium">Best Email MArketing Services</div>
-                </div>
-                {/* <div className="text-xs font-bold">$399</div> */}
-              </div>
-              <div className="h-3 w-full bg-gray-100 rounded-full overflow-hidden shadow-inner">
-                <div className="h-full rounded-full" style={{ width: '60%', backgroundColor: '#ff8633', opacity: 0.8 }}></div>
-              </div>
-              <div className="flex justify-end">
-                <div className="text-xs text-gray-500 mt-1">Features: 7/10</div>
-              </div>
-            </div>
-            
-            <div className="mb-3">
-              <div className="flex justify-between items-center mb-1">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
-                  <div className="text-xs font-medium">Business Phone System</div>
-                </div>
-                {/* <div className="text-xs font-bold">$299</div> */}
-              </div>
-              <div className="h-3 w-full bg-gray-100 rounded-full overflow-hidden shadow-inner">
-                <div className="h-full rounded-full" style={{ width: '45%', backgroundColor: '#ff8633', opacity: 0.6 }}></div>
-              </div>
-              <div className="flex justify-end">
-                <div className="text-xs text-gray-500 mt-1">Features: 5/10</div>
-              </div>
-            </div>
-            
-            {/* Enhanced savings indicator */}
-            <div className="mt-4 p-3 bg-gradient-to-r from-orange-50 to-amber-50 rounded-lg border border-amber-100 shadow-sm">
-              <div className="flex items-center">
-                <div className="mr-3 w-10 h-10 rounded-full flex items-center justify-center text-white shadow-md" style={{ backgroundColor: '#ff8633' }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M3 3a1 1 0 000 2h10a1 1 0 100-2H3zm0 4a1 1 0 000 2h6a1 1 0 000-2H3zm0 4a1 1 0 100 2h6a1 1 0 100-2H3z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                {/* <div>
-                  <div className="text-xs font-semibold text-gray-500">INSIGHT</div>
-                  <div className="text-sm font-bold text-gray-800">Save up to <span style={{ color: '#ff8633' }}>45%</span> with Model Z</div>
-                </div> */}
-              </div>
-            </div>
-          </div>
-          
-          {/* Magnifying effect */}
-          {/* <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-br from-white to-transparent opacity-40 rounded-full"></div> */}
-          {/* <div className="absolute top-4 left-10 w-20 h-8 bg-white bg-opacity-60 rounded-full transform rotate-30"></div> */}
-        </div>
-        
-        {/* Microscope body - Hidden on very small screens */}
-        <div className="absolute -bottom-32 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-          {/* Connection ring */}
-          <div className="w-20 h-6 bg-gray-300 rounded-lg shadow-inner"></div>
-          
-          {/* Main handle */}
-          <div className="w-14 h-22 bg-gradient-to-b from-gray-300 via-gray-400 to-gray-600 rounded-b-xl relative shadow-lg">
-            {/* Handle details */}
-            <div className="absolute top-10 w-full h-2 bg-gray-500"></div>
-            <div className="absolute top-20 w-full h-10 bg-gray-300 shadow-inner"></div>
-            <div className="absolute top-26 w-full h-2 bg-gray-500"></div>
-            
-            {/* Adjustment knobs */}
-            <div className="absolute right-full top-12 w-6 h-6 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 shadow-md transform translate-x-1"></div>
-            <div className="absolute left-full top-24 w-6 h-6 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 shadow-md transform -translate-x-1"></div>
-          </div>
-          
-          {/* Base */}
-          <div className="w-32 h-4 bg-gray-400 rounded-lg -mt-2"></div>
-          <div className="w-40 h-6 bg-gray-600 rounded-lg -mt-1"></div>
-        </div>
-        
-        {/* Microscope focus adjustment wheel */}
-        <div className="absolute top-1/3 -right-3 transform translate-x-1/2 w-12 h-24">
-          <div className="w-full h-full bg-gradient-to-r from-gray-400 to-gray-600 rounded-r-lg shadow-lg flex flex-col justify-around items-center py-2">
-            <div className="w-8 h-2 bg-gray-300 rounded-full shadow-inner"></div>
-            <div className="w-8 h-2 bg-gray-300 rounded-full shadow-inner"></div>
-            <div className="w-8 h-2 bg-gray-300 rounded-full shadow-inner"></div>
-          </div>
-        </div>
+        {/* Magnifying Glass Image */}
+       <div className="relative w-96 md:w-[400px] lg:w-[500px] h-96 md:h-[500px] lg:h-[600px]">
+  {/* Magnifying Glass Image */}
+  <img 
+    src="images/MagnifiedGlass.png" 
+    alt="Magnifying glass" 
+    className="w-full h-full object-contain absolute z-10"
+  />
+
+  {/* Adjusted Labels */}
+  <div
+    className="absolute z-0 left-1/2 top-1/2 transform -translate-x-[60%] -translate-y-[65%] w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden"
+  >
+    <div className="absolute inset-0 pointer-events-none">
+
+      {/* Best Payroll */}
+      <div className="absolute left-[50%] top-[30%] -translate-x-1/2 text-blue-300 text-sm md:text-lg font-semibold">
+        Best Payroll
+      </div>
+
+      {/* Best CRM */}
+      <div className="absolute left-[28%] top-[52%] text-blue-300 text-sm md:text-lg font-semibold">
+        Best CRM
+      </div>
+
+      {/* Best VOIP */}
+      <div className="absolute left-[68%] top-[48%] text-blue-300 text-sm md:text-lg font-semibold">
+        Best VOIP
+      </div>
+
+      {/* Best GPS */}
+      <div className="absolute left-[56%] top-[75%] text-blue-300 text-sm md:text-lg font-semibold">
+        Best GPS
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
       
       {/* Floating Labels - Responsive positioning and hidden on smallest screens */}
@@ -584,7 +504,6 @@ const Home = () => {
       </div>
     </div>
   </div>
-  
   {/* Background SVG wave */}
   <div className="absolute bottom-0 left-0 right-0">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto" preserveAspectRatio="none">

@@ -18,7 +18,7 @@
     "@svgdotjs/svg.js": "^3.2.4",
     "@tailwindcss/vite": "^4.0.9",
     "emailjs-com": "^3.2.0",
-    "framer-motion": "^12.9.1",
+    "framer-motion": "^12.16.0",
     "lucide-react": "^0.477.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
