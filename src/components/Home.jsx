@@ -32,7 +32,7 @@ const Home = () => {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
-   const labels = ["payroll", "crm", "voip", "gps"];
+   const labels = ["payroll", "crm", "voip", "gps","Call Center","Email Marketing","White Paper"];
     const [highlightIndex, setHighlightIndex] = useState(0); 
 
   useEffect(() => {
@@ -387,60 +387,61 @@ const Home = () => {
   {/* Main Content Grid - Changed to more flexible layout for better responsive behavior */}
  <div className="flex flex-col lg:flex-row container mx-auto"> 
     {/* Left Content - Text and form section */}
-    <div className="relative z-10 flex flex-col justify-center py-10 px-4 sm:px-8 md:px-12 lg:w-1/2 lg:py-20 lg:px-16 ">
-      {/* Main Heading - Responsive text sizes */}
-      <h1 className="text-3xl sm:text-3xl lg:text-3xl font-bold sm:mb-2 text-left text-white leading-tight">
-        Empowering Decisions <br className="hidden sm:block" />
-        Through Price & Insight.
-      </h1>
+  <div className="relative z-10 flex flex-col justify-center pt-0 pb-10 px-4 sm:px-8 md:px-12 lg:w-1/2 lg:pt-2 lg:pb-10 lg:px-20">
+  {/* Main Heading */}
+  <h1 className="text-3xl sm:text-3xl lg:text-3xl font-bold sm:mb-2 text-left text-white leading-tight">
+    Empowering Decisions <br className="hidden sm:block" />
+    Through Price & Insight.
+  </h1>
 
-      {/* Subheading - Adjusted for readability on small screens */}
-      <p className="text-sm md:text-base mb-6 sm:mb-8 max-w-xl text-left text-gray-100">
-     We help market buyers cut through the clutter by providing clear, side-by-side price quote comparisons from multiple vendors. Whether you're investing in new tech, upgrading your systems, or exploring innovative solutions, Compare Bazaar empowers you with the insights you need to choose the right option—quickly, confidently, and cost-effectively.
-      </p>
+  {/* Subheading */}
+  <p className="text-sm md:text-base mb-6 sm:mb-8 max-w-xl text-left text-gray-100">
+    We help market buyers cut through the clutter by providing clear, side-by-side price quote comparisons from multiple vendors. Whether you're investing in new tech, upgrading your systems, or exploring innovative solutions, Compare Bazaar empowers you with the insights you need to choose the right option—quickly, confidently, and cost-effectively.
+  </p>
 
-      {/* Email Subscription Form - Made responsive */}
-      <div className="w-full max-w-md bg-white rounded-lg shadow-lg overflow-hidden">
-        <div className="flex flex-col sm:flex-row items-center">
-          <div className="w-full flex-grow pl-4 flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-gray-400 mr-2 shrink-0"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
-            </svg>
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="w-full py-3 sm:py-4 px-2 outline-none text-gray-700 text-sm"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              disabled={loading}
-            />
-          </div>
-          <button
-            className="w-full sm:w-auto text-white font-medium py-3 sm:py-4 px-6 transition-colors disabled:opacity-50 flex items-center justify-center"
-            style={{ backgroundColor: '#ff8633' }}
-            onClick={handleSubscribe}
-            disabled={loading}
-          >
-            {loading ? "Subscribing..." : subscribed ? "Subscribed ✅" : "Subscribe"}
-            {!loading && !subscribed && <ChevronRight className="ml-1 h-5 w-5" />}
-          </button>
-        </div>
+  {/* Email Subscription Form */}
+  <div className="w-full max-w-md bg-white rounded-lg shadow-lg overflow-hidden">
+    <div className="flex flex-col sm:flex-row items-center">
+      <div className="w-full flex-grow pl-4 flex items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 text-gray-400 mr-2 shrink-0"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          />
+        </svg>
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          className="w-full py-3 sm:py-4 px-2 outline-none text-gray-700 text-sm"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          disabled={loading}
+        />
       </div>
+      <button
+        className="w-full sm:w-auto text-white font-medium py-3 sm:py-4 px-6 transition-colors disabled:opacity-50 flex items-center justify-center"
+        style={{ backgroundColor: '#ff8633' }}
+        onClick={handleSubscribe}
+        disabled={loading}
+      >
+        {loading ? "Subscribing..." : subscribed ? "Subscribed ✅" : "Subscribe"}
+        {!loading && !subscribed && <ChevronRight className="ml-1 h-5 w-5" />}
+      </button>
     </div>
+  </div>
+</div>
+
 
     {/* Magnifying Glass Visual */}
-    <div className="flex items-center justify-center relative py-6 md:py-10 lg:w-1/2">
+    <div className="flex items-center justify-center relative py-6 md:py-8 lg:w-1/2">
       {/* Background decorative elements - Responsive sizes */}
       <div className="absolute top-0 right-0 w-32 md:w-64 h-32 md:h-64 bg-orange-300 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
       <div className="absolute bottom-10 md:bottom-20 right-10 md:right-20 w-32 md:w-56 h-32 md:h-56 bg-amber-500 rounded-full filter blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
@@ -454,47 +455,63 @@ const Home = () => {
           position: 'relative'
         }}
       >
-         <div className="relative w-96 md:w-[400px] lg:w-[500px] h-96 md:h-[500px] lg:h-[600px]">
-      {/* Magnifying Glass Image */}
-      <img
-        src="images/MagnifiedGlass.png"
-        alt="Magnifying glass"
-        className="absolute z-10 w-full h-full object-contain pointer-events-none animate-float-up"
-      />
+ < div className="relative w-[800px] md:w-[950px] lg:w-[1100px] h-[800px] md:h-[950px] lg:h-[1100px]">
+  {/* Magnifying Glass Image */}
+  <img
+    src="images/MagnifiedGlass.webp"
+    alt="Magnifying glass"
+    className="absolute z-10 w-full h-full object-contain pointer-events-none animate-float-up"
+  />
 
-      {/* Labels */}
-      <div className="absolute z-20 left-[37%] top-[37%] -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] flex items-center justify-center">
-        <div className="relative w-full h-full">
-          {/* Best Payroll */}
-          <div
-            className={`absolute left-1/2 top-[20%] -translate-x-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("payroll")}`}
-          >
-            Best Payroll
-          </div>
 
-          {/* Best CRM */}
-          <div
-            className={`absolute left-[15%] top-1/2 -translate-y-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("crm")}`}
-          >
-            Best CRM
-          </div>
-
-          {/* Best VOIP */}
-          <div
-            className={`absolute right-[15%] top-1/2 -translate-y-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("voip")}`}
-          >
-            Best VOIP
-          </div>
-
-          {/* Best GPS */}
-          <div
-            className={`absolute left-1/2 bottom-[20%] -translate-x-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("gps")}`}
-          >
-            Best GPS
-          </div>
-        </div>
-      </div>
+  {/* Labels */}
+    <div className="absolute z-20 left-[41%] top-[32%] -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] flex items-center justify-center">
+  <div className="relative w-full h-full">
+    {/* Top Center */}
+    <div className={`absolute left-1/2 top-[22%] -translate-x-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("payroll")}`}>
+      Best Payroll
     </div>
+
+    {/* Left Middle */}
+    <div className={`absolute left-[22%] top-[50%] -translate-y-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("crm")}`}>
+      Best CRM
+    </div>
+
+    {/* Right Middle */}
+    <div className={`absolute right-[24%] top-[50%] -translate-y-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("voip")}`}>
+      Best VOIP
+    </div>
+
+    {/* Bottom Center */}
+    <div className={`absolute left-1/2 bottom-[24%] -translate-x-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("gps")}`}>
+      Best GPS
+    </div>
+
+    {/* Top Left */}
+    <div className={`absolute left-[35%] top-[37%] -translate-x-1/2 -translate-y-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("email")}`}>
+      Email Marketing
+    </div>
+
+    {/* Top Right */}
+    <div className={`absolute right-[35%] top-[37%] translate-x-1/2 -translate-y-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("blogs")}`}>
+      Blogs
+    </div>
+
+    {/* Bottom Left */}
+    <div className={`absolute left-[34%] bottom-[37%] -translate-x-1/2 translate-y-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("whitepaper")}`}>
+      White Paper
+    </div>
+
+    {/* Bottom Right */}
+    <div className={`absolute right-[35%] bottom-[37%] translate-x-1/2 translate-y-1/2 text-sm md:text-base transition-all duration-300 ${getHighlightClass("callcenter")}`}>
+      Call Center
+    </div>
+  </div>
+</div>
+
+</div>
+
+
       </div>
       
       {/* Floating Labels - Responsive positioning and hidden on smallest screens */}
