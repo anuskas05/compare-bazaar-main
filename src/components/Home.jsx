@@ -441,7 +441,7 @@ const Home = () => {
         }}
       >
         {/* Magnifying Glass Image */}
-       <div className="relative w-96 md:w-[400px] lg:w-[500px] h-96 md:h-[500px] lg:h-[600px]">
+        <div className="relative w-96 md:w-[400px] lg:w-[500px] h-96 md:h-[500px] lg:h-[600px]">
   {/* Magnifying Glass Image */}
   <img 
     src="images/MagnifiedGlass.png" 
@@ -449,9 +449,9 @@ const Home = () => {
     className="w-full h-full object-contain absolute z-10"
   />
 
-  {/* Adjusted Labels */}
+  {/* Final Adjusted Labels - Shifted Further Left & Up */}
   <div
-    className="absolute z-0 left-1/2 top-1/2 transform -translate-x-[60%] -translate-y-[65%] w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden"
+    className="absolute z-0 left-1/2 top-1/2 transform -translate-x-[68%] -translate-y-[72%] w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden"
   >
     <div className="absolute inset-0 pointer-events-none">
 
@@ -477,6 +477,7 @@ const Home = () => {
     </div>
   </div>
 </div>
+
 
       </div>
       
